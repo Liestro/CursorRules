@@ -1,0 +1,43 @@
+---
+description: Rules for writing rules in the project
+globs: **/rules/**/*.mdc
+---
+## General Principles
+1. Write rules in clear English, avoiding complex constructions.
+2. Each rule should be brief and specific — no more than two sentences.
+3. Use numbering for each rule so that AI can easily distinguish them.
+4. If a rule relates to a specific programming language, indicate this explicitly.
+
+## Structure and Style
+5. Start the file with a `description` field to explain its purpose.
+6. Use Markdown headings (##) to separate logical blocks if there are more than 10 rules.
+7. Add examples after complex rules, formatting them in code blocks with language specification:
+
+```python
+# Example for Python
+def calculate_total(items: list[dict]) -> float:
+    """Calculates the total sum of items including tax."""
+    return sum(item["price"] * (1 + item["tax_rate"]) for item in items)
+```
+
+```javascript
+// Example for JavaScript
+function validateUserInput(input) {
+  if (!input || typeof input !== 'string') {
+    throw new Error('Input must be a non-empty string');
+  }
+  
+  return input.trim().toLowerCase();
+}
+```
+
+## Specific Recommendations
+8. Specify the scope of application through `globs` if the rules are not common to the entire project.
+9. Avoid abstract phrases like "write good code" — instead, explain what "good" means.
+- Bad: "Write clean code."
+- Good: "Use snake_case for variables and add type hints."
+10. If a rule may conflict with others, add an explanation about priority.
+
+## Verification and Testing
+11. After writing a rule, test it on a small code example in the project.
+12. Regularly update rules if you notice that AI incorrectly interprets instructions.
