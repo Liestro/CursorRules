@@ -4,14 +4,15 @@ globs: **/rules/**/*.mdc
 ---
 ## General Principles
 1. Write rules in clear English, avoiding complex constructions.
-2. Each rule should be brief and specific — no more than two sentences.
+2. Each rule should be brief and specific, ideally no more than two sentences. Use bullet points to break down complex rules if needed.
 3. Use numbering for each rule so that AI can easily distinguish them.
-4. If a rule relates to a specific programming language, indicate this explicitly.
+4. If a rule relates to a specific programming language, indicate this explicitly (e.g., 'For Python: ...'). 
+   Specify variations for different languages if applicable.
 
 ## Structure and Style
-5. Start the file with a `description` field to explain its purpose.
-6. Use Markdown headings (##) to separate logical blocks if there are more than 10 rules.
-7. Add examples after complex rules, formatting them in code blocks with language specification:
+5. Begin each rule file with a concise `description` field that clearly states its purpose.
+6. Use Markdown headings (##) to group rules into logical sections (e.g., 'Naming Conventions', 'Code Style') when there are more than 10 rules.
+7. Provide simple, illustrative examples in code blocks for complex rules, specifying the programming language (e.g., python or javascript):
 
 ```python
 # Example for Python
@@ -31,13 +32,18 @@ function validateUserInput(input) {
 }
 ```
 
-## Specific Recommendations
-8. Specify the scope of application through `globs` if the rules are not common to the entire project.
-9. Avoid abstract phrases like "write good code" — instead, explain what "good" means.
-- Bad: "Write clean code."
-- Good: "Use snake_case for variables and add type hints."
-10. If a rule may conflict with others, add an explanation about priority.
+## File Format Requirements
+8. All rule files must have the .mdc extension (Markdown Configuration); files with other extensions will not be recognized by the system.
+9. Organize rule files in the `rules/` directory or its subdirectories, using subfolders to categorize rules by topic or language (e.g., `rules/python/`).
 
-## Verification and Testing
-11. After writing a rule, test it on a small code example in the project.
-12. Regularly update rules if you notice that AI incorrectly interprets instructions.
+## Specific Recommendations
+10. Use `globs` to specify which files the rules apply to if they are not project-wide (e.g., `**/python/*.mdc` for Python-specific rules).
+11. Ensure rules are specific and measurable; avoid vague terms like 'good' or 'clean' without defining them.
+    - Bad: "Make functions efficient."
+    - Good: "Limit functions to a maximum of 50 lines to improve readability and maintainability."
+12. If rules conflict, specify which rule takes precedence and under what conditions (e.g., 'This rule overrides rule X when Y applies').
+
+## Maintenance and Collaboration for AI Agent
+13. When applying a rule, verify its relevance and effectiveness based on the current context. If a rule seems outdated, log it under `## Updates Needed` in `rules/ai_log.md` with the rule number and a brief explanation for human review.
+14. If feedback on a rule is provided (e.g., via comments or direct input), log it under `## Feedback Log` in `rules/ai_log.md` with the rule number and a summary, then continue applying the rule unless instructed otherwise.
+15. If a rule cannot be applied or requires deviation, log it under `## Exceptions` in `rules/ai_log.md`, including the rule number, the reason for deviation, and the specific context (e.g., file or task).
