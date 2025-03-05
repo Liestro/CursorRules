@@ -26,6 +26,14 @@ This section documents cases where rules could not be applied or required deviat
 |------|----------------|---------|----------------------|----------------------|
 | | | | | |
 
+## Effectiveness Metrics
+
+This section tracks successful applications of rules and their effectiveness.
+
+| Date | Rule Reference | Application Context | Outcome (Positive/Negative/Neutral) | Explanation/Improvement Suggestions |
+|------|----------------|---------------------|--------------------------------------|-------------------------------------|
+| | | | | |
+
 ## Usage Guidelines
 
 1. When logging an issue, always include the rule number and file name (e.g., "Rule 5 in cursor_rules_guide.mdc").

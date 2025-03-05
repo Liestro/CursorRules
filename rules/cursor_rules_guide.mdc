@@ -42,8 +42,10 @@ function validateUserInput(input) {
     - Bad: "Make functions efficient."
     - Good: "Limit functions to a maximum of 50 lines to improve readability and maintainability."
 12. If rules conflict, specify which rule takes precedence and under what conditions (e.g., 'This rule overrides rule X when Y applies').
+13. Use this file (cursor_rules_guide.mdc) as a reference example for the proper structure, formatting, and organization of rule files. This document follows all its own recommendations and can serve as a template.
 
 ## Maintenance and Collaboration for AI Agent
-13. When applying a rule, verify its relevance and effectiveness based on the current context. If a rule seems outdated, log it under `## Updates Needed` in `rules/ai_log.md` with the rule number and a brief explanation for human review.
-14. If feedback on a rule is provided (e.g., via comments or direct input), log it under `## Feedback Log` in `rules/ai_log.md` with the rule number and a summary, then continue applying the rule unless instructed otherwise.
-15. If a rule cannot be applied or requires deviation, log it under `## Exceptions` in `rules/ai_log.md`, including the rule number, the reason for deviation, and the specific context (e.g., file or task).
+14. When applying a rule, if it seems outdated, unclear, or ineffective for the current context, log it under `## Updates Needed` in `rules/ai_log.md` with the rule number and a brief explanation of the issue for human review.
+15. If feedback on a rule is provided (e.g., via comments or direct input), log it under `## Feedback Log` in `rules/ai_log.md` with the rule number and a summary, then continue applying the rule unless instructed otherwise.
+16. If a rule cannot be applied or requires deviation, log it under `## Exceptions` in `rules/ai_log.md`, including the rule number, the reason for deviation, and the specific context (e.g., file or task).
+17. Systematically track all rule applications under `## Effectiveness Metrics` in `rules/ai_log.md`, regardless of outcome. For each application, note: (a) rule number, (b) context where it was applied, (c) outcome (positive/negative/neutral), and (d) brief explanation of the impact. This comprehensive data collection helps identify patterns and opportunities for improvement beyond individual problematic cases.
