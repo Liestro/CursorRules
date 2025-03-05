@@ -34,7 +34,7 @@ function validateUserInput(input) {
 
 ## File Format Requirements
 8. All rule files must have the .mdc extension (Markdown Configuration); files with other extensions will not be recognized by the system.
-9. Organize rule files in the root directory or its subdirectories, using subfolders to categorize rules by topic or language if needed.
+9. Place new rule files in the same directory as related rules, organizing them in any directory structure that makes sense for the project, including customizing `.cursor/rules/` per project.
 
 ## Specific Recommendations
 10. Use `globs` to specify which files the rules apply to if they are not project-wide (e.g., `**/python/*.mdc` for Python-specific rules).
