@@ -1,39 +1,34 @@
 ---
 description: Rules for managing and updating the AI log file
-globs: **/ai_log.md
+globs: 
 ---
 
-## Updates and Feedback Management
-1. Updates Tracking:
-    - When a rule seems outdated, unclear, or ineffective, log it under `## Updates Needed` in `ai_log.md`
-    - Include the rule number, brief explanation of the issue, and recommendation for improvement
+## Log Management Requirement
+IMPORTANT: When processing or applying these rules, all actions must be logged according to the guidelines in `log_management_rules.mdc`. This includes tracking updates needed, feedback received, exceptions, and effectiveness metrics.
 
-2. Feedback Collection:
-    - When receiving feedback about a rule, log it under `## Feedback Log` in `ai_log.md`
-    - Include the rule number, feedback source, and summary of the feedback
+## Action Items Management
+1. Backlog Management:
+   1.1. Issues, feedback, improvements, and exceptions should be tracked in the "Action Items Backlog" section of `ai_log.md`.
+   1.2. Each entry must have a date, rule reference, type, description, status, and resolution (when applicable).
+   1.3. The type must be one of: `Update`, `Feedback`, `Improvement`, or `Exception`.
+   1.4. Status must be one of: `Open`, `In Progress`, `Resolved`, `Won't Fix`, or `Duplicate`.
 
-## Exception Handling
-3. Exceptions Documentation:
-    - Document any case where a rule cannot be applied under `## Exceptions` in `ai_log.md`
-    - Include the rule number, context, reason for deviation, and alternative approach used
+2. Item Tracking:
+   2.1. When a new issue is identified, create a new entry with status `Open`.
+   2.2. When working on an issue, update its status to `In Progress`.
+   2.3. When an issue is addressed, update its status to `Resolved` and provide resolution details.
+   2.4. Never delete items from the backlog; instead, update their status accordingly.
 
-## Performance Tracking
-4. Metrics Collection:
-    - Track all rule applications under `## Effectiveness Metrics` in `ai_log.md`
-    - For each application, document:
-      a) Rule number and context
-      b) Outcome (positive/negative/neutral)
-      c) Brief explanation of impact
-      d) Any improvement suggestions
+3. Exception Documentation:
+   3.1. When a rule cannot be applied, create a new entry with type `Exception`.
+   3.2. In the description field, include the context, reason for deviation, and alternative approach used.
+   3.3. If the exception indicates a problem with the rule itself, consider creating an additional entry with type `Update`.
 
 ## Entry Format Standards
-5. Reference Format:
-    - Always include rule numbers and file names in references (e.g., "Rule 5 in cursor_rules_guide.mdc")
-    - Use YYYY-MM-DD format for dates
-    - Provide specific context for all entries
-    - Document alternative approaches for exceptions
+4. Reference Format: Always include rule numbers and file names in references (e.g., "Rule 5 in cursor_rules_guide.mdc").
+   4.1. Use YYYY-MM-DD format for dates.
+   4.2. Provide specific context for all entries.
 
-6. Entry Organization:
-    - Keep entries in reverse chronological order (newest first)
-    - Use tables for structured data as shown in the template
-    - Remove resolved issues to maintain the file as a backlog rather than a historical log 
+5. Backlog Organization: Keep the backlog organized by status for easy tracking.
+   5.1. Use tables for structured data as shown in the template.
+   5.2. Review the backlog regularly to identify patterns and prioritize improvements. 
