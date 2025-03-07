@@ -31,7 +31,7 @@ IMPORTANT: Strict adherence to the structure described in this section is mandat
    8.1. Begin each file with YAML frontmatter enclosed by three dashes (---) at both start and end
    8.2. Include at minimum the following fields:
         8.2.1. `description`: Concise statement of the rules' purpose
-        8.2.2. `globs`: Pattern specifying which files the rules apply to (e.g., `**/python/*.mdc`)
+        8.2.2. `globs`: Pattern specifying which files the rules apply to (e.g., `**/python/*.mdc`). Might be empty if the rules apply to all files.
    8.3. Do NOT include a top-level heading (# Title) as the frontmatter serves this purpose
 
 9. Content Structure:
@@ -45,6 +45,7 @@ IMPORTANT: Strict adherence to the structure described in this section is mandat
         9.5.2. The first rule in the document starts with number 1.
         9.5.3. Number subrules in X.Y format, where X is the parent rule number and Y is the sequential number of the subrule starting from 1.
         9.5.4. If a subrule contains nested items, use X.Y.Z format for further nesting.
+        9.5.5. Do not create numbered sublists with only one element. Include single subelements directly in the text of the main rule.
 
 ## Documentation Best Practices
 10. Examples and Code Blocks: Provide illustrative examples for complex rules and use code blocks with language specification:
