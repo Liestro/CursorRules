@@ -1,0 +1,39 @@
+---
+description: Rules for managing and updating the AI log file
+globs: **/ai_log.md
+---
+
+## Updates and Feedback Management
+1. Updates Tracking:
+    - When a rule seems outdated, unclear, or ineffective, log it under `## Updates Needed` in `ai_log.md`
+    - Include the rule number, brief explanation of the issue, and recommendation for improvement
+
+2. Feedback Collection:
+    - When receiving feedback about a rule, log it under `## Feedback Log` in `ai_log.md`
+    - Include the rule number, feedback source, and summary of the feedback
+
+## Exception Handling
+3. Exceptions Documentation:
+    - Document any case where a rule cannot be applied under `## Exceptions` in `ai_log.md`
+    - Include the rule number, context, reason for deviation, and alternative approach used
+
+## Performance Tracking
+4. Metrics Collection:
+    - Track all rule applications under `## Effectiveness Metrics` in `ai_log.md`
+    - For each application, document:
+      a) Rule number and context
+      b) Outcome (positive/negative/neutral)
+      c) Brief explanation of impact
+      d) Any improvement suggestions
+
+## Entry Format Standards
+5. Reference Format:
+    - Always include rule numbers and file names in references (e.g., "Rule 5 in cursor_rules_guide.mdc")
+    - Use YYYY-MM-DD format for dates
+    - Provide specific context for all entries
+    - Document alternative approaches for exceptions
+
+6. Entry Organization:
+    - Keep entries in reverse chronological order (newest first)
+    - Use tables for structured data as shown in the template
+    - Remove resolved issues to maintain the file as a backlog rather than a historical log 

@@ -2,6 +2,7 @@
 description: Guidelines for writing Product Requirements Documents (PRD)
 globs: **/prd/*.md
 ---
+
 ## File Location
 1. Place all PRD files in the `instructions` directory in the root of the project, unless the user explicitly specifies another location.
 2. Name PRD files descriptively, reflecting the feature or product they document (e.g., `user_authentication_prd.md`).

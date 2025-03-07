@@ -3,17 +3,51 @@ description: Rules for writing rules in the project
 globs: **/*.mdc
 ---
 
+## Log Management Requirement
+IMPORTANT: When processing or applying these rules, all actions must be logged according to the guidelines in `log_management_rules.mdc`. This includes tracking updates needed, feedback received, exceptions, and effectiveness metrics.
+
 ## General Principles
 1. Write rules in clear English, avoiding complex constructions.
-2. Each rule should be brief and specific, ideally no more than two sentences. Use bullet points to break down complex rules if needed.
-3. Use numbering for each rule so that AI can easily distinguish them.
-4. If a rule relates to a specific programming language, indicate this explicitly (e.g., 'For Python: ...'). 
-   Specify variations for different languages if applicable.
+2. Use numbering for each rule so that AI can easily distinguish them.
+3. If a rule relates to a specific programming language, indicate this explicitly (e.g., 'For Python: ...'). Specify variations for different languages if applicable.
 
-## Structure and Style
-5. Begin each rule file with a concise `description` field that clearly states its purpose.
-6. Use Markdown headings (##) to group rules into logical sections (e.g., 'Naming Conventions', 'Code Style') when there are more than 10 rules.
-7. Provide simple, illustrative examples in code blocks for complex rules, specifying the programming language (e.g., python or javascript):
+## Content Writing Guidelines
+4. Each rule should be brief and specific, ideally no more than two sentences. Use numbered lists to break down complex rules if needed.
+5. Ensure rules are specific and measurable; avoid vague terms like 'good' or 'clean' without defining them.
+   5.1. Bad: "Make functions efficient."
+   5.2. Good: "Limit functions to a maximum of 50 lines to improve readability and maintainability."
+6. If rules conflict, specify which rule takes precedence and under what conditions. Always explicitly state which rule overrides another (e.g., 'Rule 5.2 overrides Rule 5.1 when...').
+
+## File Structure and Organization
+IMPORTANT: Strict adherence to the structure described in this section is mandatory - the system will not be able to process rules that deviate from this format.
+
+7. Basic Requirements:
+   7.1. All rule files must have the .mdc extension (Markdown Configuration)
+   7.2. Place files in the same directory as related rules
+   7.3. Organize in any directory structure that makes sense for the project
+   7.4. All rule files must include a Log Management section immediately after the YAML frontmatter
+
+8. YAML Frontmatter:
+   8.1. Begin each file with YAML frontmatter enclosed by three dashes (---) at both start and end
+   8.2. Include at minimum the following fields:
+        8.2.1. `description`: Concise statement of the rules' purpose
+        8.2.2. `globs`: Pattern specifying which files the rules apply to (e.g., `**/python/*.mdc`)
+   8.3. Do NOT include a top-level heading (# Title) as the frontmatter serves this purpose
+
+9. Content Structure:
+   9.1. Use Markdown headings (##) to group rules into logical sections
+   9.2. The first section after frontmatter must be "Log Management Requirement" with the following text:
+        "IMPORTANT: When processing or applying these rules, all actions must be logged according to the guidelines in `log_management_rules.mdc`. This includes tracking updates needed, feedback received, exceptions, and effectiveness metrics."
+   9.3. Create sections when there are more than 10 rules or distinct categories
+   9.4. Common section types include 'Naming Conventions', 'Code Style', etc.
+   9.5. Rule numbering system:
+        9.5.1. Use sequential numbering for main rules (not subrules) across all sections of the document.
+        9.5.2. The first rule in the document starts with number 1.
+        9.5.3. Number subrules in X.Y format, where X is the parent rule number and Y is the sequential number of the subrule starting from 1.
+        9.5.4. If a subrule contains nested items, use X.Y.Z format for further nesting.
+
+## Documentation Best Practices
+10. Examples and Code Blocks: Provide illustrative examples for complex rules and use code blocks with language specification:
 
 ```python
 # Example for Python
@@ -33,40 +67,20 @@ function validateUserInput(input) {
 }
 ```
 
-## File Format Requirements
-8. All rule files must:
-   - Have the .mdc extension (Markdown Configuration)
-   - Begin with YAML frontmatter enclosed by three dashes (---) at both the start and end
-   - Include at minimum the `description` and `globs` fields in the frontmatter
-   - NOT include a top-level heading (# Title) as the frontmatter serves this purpose
-9. Place new rule files in the same directory as related rules, organizing them in any directory structure that makes sense for the project, including customizing `.cursor/rules/` per project.
-10. Use `globs` to specify which files the rules apply to if they are not project-wide (e.g., `**/python/*.mdc` for Python-specific rules).
-11. Begin each rule file with a concise `description` field in the frontmatter that clearly states its purpose.
+11. Use the following template as a starting point for new rule files:
 
-## Standard File Template
-12. Use the following template as a starting point for all new rule files:
-
-```mdc
+```markdown
 ---
 description: Brief description of these rules
 globs: **/*.ext
 ---
 
+## Log Management Requirement
+IMPORTANT: When processing or applying these rules, all actions must be logged according to the guidelines in `log_management_rules.mdc`. This includes tracking updates needed, feedback received, exceptions, and effectiveness metrics.
+
 ## Section Heading
 1. First rule in this section
-2. Second rule in this section
+   1.1. First subrule
+   1.2. Second subrule
+2. Second rule in this section. Include single subrules directly in the parent rule.
 ```
-
-13. Use this file (cursor_rules_guide.mdc) as a reference example for the proper structure, formatting, and organization of rule files. This document follows all its own recommendations and can serve as a template.
-
-## Specific Recommendations
-14. Ensure rules are specific and measurable; avoid vague terms like 'good' or 'clean' without defining them.
-    - Bad: "Make functions efficient."
-    - Good: "Limit functions to a maximum of 50 lines to improve readability and maintainability."
-15. If rules conflict, specify which rule takes precedence and under what conditions (e.g., 'This rule overrides rule X when Y applies').
-
-## Maintenance and Collaboration for AI Agent
-16. When applying a rule, if it seems outdated, unclear, or ineffective for the current context, log it under `## Updates Needed` in `ai_log.md` with the rule number and a brief explanation of the issue for human review.
-17. If feedback on a rule is provided (e.g., via comments or direct input), log it under `## Feedback Log` in `ai_log.md` with the rule number and a summary, then continue applying the rule unless instructed otherwise.
-18. If a rule cannot be applied or requires deviation, log it under `## Exceptions` in `ai_log.md`, including the rule number, the reason for deviation, and the specific context (e.g., file or task).
-19. Systematically track all rule applications under `## Effectiveness Metrics` in `ai_log.md`, regardless of outcome. For each application, note: (a) rule number, (b) context where it was applied, (c) outcome (positive/negative/neutral), and (d) brief explanation of the impact. This comprehensive data collection helps identify patterns and opportunities for improvement beyond individual problematic cases.
