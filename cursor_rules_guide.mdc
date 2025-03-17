@@ -27,7 +27,7 @@ IMPORTANT: Strict adherence to the structure described in this section is mandat
    7.1. All rule files must have the .mdc extension (Markdown Configuration)
    7.2. Place files in the same directory as related rules
    7.3. Organize in any directory structure that makes sense for the project
-   7.4. All rule files must include a brief description (1-2 sentences in English) after the YAML frontmatter and before any section headings
+   7.4. All rule files must include a brief description after the YAML frontmatter (see section 9 for details)
    7.5. All rule files must include a Log Management section immediately after the brief description
 
 8. YAML Frontmatter:
@@ -45,7 +45,7 @@ IMPORTANT: Strict adherence to the structure described in this section is mandat
 10. Content Structure:
    10.1. Use Markdown headings (##) to group rules into logical sections
    10.2. The first section after the brief description must be "Log Management Requirement" with the following text:
-        "IMPORTANT: When processing or applying these rules, all actions must be logged according to the guidelines in `log_management_rules.mdc`. This includes tracking updates needed, feedback received, exceptions, and effectiveness metrics."
+        "IMPORTANT: When processing or applying these rules, all actions must be logged according to the guidelines in @log_management_rules.mdc. This includes tracking updates needed, feedback received, exceptions, and effectiveness metrics."
    10.3. Create sections when there are more than 10 rules or distinct categories
    10.4. Common section types include 'Naming Conventions', 'Code Style', etc.
    10.5. Rule numbering system:
@@ -84,7 +84,7 @@ description: Brief description of these rules
 globs: **/*.ext
 ---
 
-These rules apply to [specific context] and should be used when [specific scenarios]. They ensure [benefits or goals of following these rules].
+These rules apply to [specific context] and should be used when [specific scenarios].
 
 ## Log Management Requirement
 IMPORTANT: When processing or applying these rules, all actions must be logged according to the guidelines in @log_management_rules.mdc. This includes tracking updates needed, feedback received, exceptions, and effectiveness metrics.
