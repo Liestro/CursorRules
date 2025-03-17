@@ -87,7 +87,7 @@ globs: **/*.ext
 These rules apply to [specific context] and should be used when [specific scenarios]. They ensure [benefits or goals of following these rules].
 
 ## Log Management Requirement
-IMPORTANT: When processing or applying these rules, all actions must be logged according to the guidelines in `log_management_rules.mdc`. This includes tracking updates needed, feedback received, exceptions, and effectiveness metrics.
+IMPORTANT: When processing or applying these rules, all actions must be logged according to the guidelines in @log_management_rules.mdc. This includes tracking updates needed, feedback received, exceptions, and effectiveness metrics.
 
 ## Section Heading
 1. First rule in this section
