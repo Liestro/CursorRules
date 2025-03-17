@@ -1,10 +1,12 @@
 ---
-description: Rules for writing rules in the project
+description: Rules for writing cursor rules in the project
 globs: **/*.mdc
 ---
 
+Always use this file if you are writing cursor rules for the project.
+
 ## Log Management Requirement
-IMPORTANT: When processing or applying these rules, all actions must be logged according to the guidelines in `log_management_rules.mdc`. This includes tracking updates needed, feedback received, exceptions, and effectiveness metrics.
+IMPORTANT: When you write rules, all actions must be logged according to the guidelines in @log_management_rules.mdc. This includes tracking updates needed, feedback received, exceptions, and effectiveness metrics.
 
 ## General Principles
 1. Write rules in clear English, avoiding complex constructions.
