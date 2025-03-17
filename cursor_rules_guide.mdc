@@ -27,7 +27,8 @@ IMPORTANT: Strict adherence to the structure described in this section is mandat
    7.1. All rule files must have the .mdc extension (Markdown Configuration)
    7.2. Place files in the same directory as related rules
    7.3. Organize in any directory structure that makes sense for the project
-   7.4. All rule files must include a Log Management section immediately after the YAML frontmatter
+   7.4. All rule files must include a brief description (1-2 sentences in English) after the YAML frontmatter and before any section headings
+   7.5. All rule files must include a Log Management section immediately after the brief description
 
 8. YAML Frontmatter:
    8.1. Begin each file with YAML frontmatter enclosed by three dashes (---) at both start and end
@@ -36,21 +37,26 @@ IMPORTANT: Strict adherence to the structure described in this section is mandat
         8.2.2. `globs`: Pattern specifying which files the rules apply to (e.g., `**/python/*.mdc`). Might be empty if the rules apply to all files.
    8.3. Do NOT include a top-level heading (# Title) as the frontmatter serves this purpose
 
-9. Content Structure:
-   9.1. Use Markdown headings (##) to group rules into logical sections
-   9.2. The first section after frontmatter must be "Log Management Requirement" with the following text:
+9. Brief Description:
+   9.1. After the YAML frontmatter and before any sections, include a brief, concise description (1-2 sentences) 
+   9.2. This description should explain when to use these rules and their purpose
+   9.3. Do not use a heading for this description - it should appear directly after the frontmatter
+
+10. Content Structure:
+   10.1. Use Markdown headings (##) to group rules into logical sections
+   10.2. The first section after the brief description must be "Log Management Requirement" with the following text:
         "IMPORTANT: When processing or applying these rules, all actions must be logged according to the guidelines in `log_management_rules.mdc`. This includes tracking updates needed, feedback received, exceptions, and effectiveness metrics."
-   9.3. Create sections when there are more than 10 rules or distinct categories
-   9.4. Common section types include 'Naming Conventions', 'Code Style', etc.
-   9.5. Rule numbering system:
-        9.5.1. Use sequential numbering for main rules (not subrules) across all sections of the document.
-        9.5.2. The first rule in the document starts with number 1.
-        9.5.3. Number subrules in X.Y format, where X is the parent rule number and Y is the sequential number of the subrule starting from 1.
-        9.5.4. If a subrule contains nested items, use X.Y.Z format for further nesting.
-        9.5.5. Do not create numbered sublists with only one element. Include single subelements directly in the text of the main rule.
+   10.3. Create sections when there are more than 10 rules or distinct categories
+   10.4. Common section types include 'Naming Conventions', 'Code Style', etc.
+   10.5. Rule numbering system:
+        10.5.1. Use sequential numbering for main rules (not subrules) across all sections of the document.
+        10.5.2. The first rule in the document starts with number 1.
+        10.5.3. Number subrules in X.Y format, where X is the parent rule number and Y is the sequential number of the subrule starting from 1.
+        10.5.4. If a subrule contains nested items, use X.Y.Z format for further nesting.
+        10.5.5. Do not create numbered sublists with only one element. Include single subelements directly in the text of the main rule.
 
 ## Documentation Best Practices
-10. Examples and Code Blocks: Provide illustrative examples for complex rules and use code blocks with language specification:
+11. Examples and Code Blocks: Provide illustrative examples for complex rules and use code blocks with language specification:
 
 ```python
 # Example for Python
@@ -70,13 +76,15 @@ function validateUserInput(input) {
 }
 ```
 
-11. Use the following template as a starting point for new rule files:
+12. Use the following template as a starting point for new rule files:
 
 ```markdown
 ---
 description: Brief description of these rules
 globs: **/*.ext
 ---
+
+These rules apply to [specific context] and should be used when [specific scenarios]. They ensure [benefits or goals of following these rules].
 
 ## Log Management Requirement
 IMPORTANT: When processing or applying these rules, all actions must be logged according to the guidelines in `log_management_rules.mdc`. This includes tracking updates needed, feedback received, exceptions, and effectiveness metrics.
