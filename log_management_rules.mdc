@@ -3,8 +3,7 @@ description: Rules for managing and updating the AI log file
 globs: 
 ---
 
-## Log Management Requirement
-IMPORTANT: When processing or applying these rules, all actions must be logged according to the guidelines in `log_management_rules.mdc`. This includes tracking updates needed, feedback received, exceptions, and effectiveness metrics.
+**IMPORTANT NOTICE**: These logging rules are currently under development and have not yet been implemented. Until further notice, no logging actions are required. Please ignore logging instructions until the official system launch.
 
 ## Action Items Management
 1. Backlog Management:
